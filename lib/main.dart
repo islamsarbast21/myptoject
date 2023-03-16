@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myprojectapp/first.dart';
+import 'package:myprojectapp/home.dart';
 void main() {
   runApp(const  MyApp());
 }
@@ -11,6 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(appBarTheme: AppBarTheme(backgroundColor: Color(0xff075e54))),
       home:body()
 
       );
