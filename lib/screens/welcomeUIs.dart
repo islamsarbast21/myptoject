@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:myprojectapp/screens/regestrationUIs.dart';
+import 'package:myprojectapp/screens/signingUIs.dart';
 
 import '../widgets/my_button.dart';
 
 class Welcomescreen extends StatefulWidget {
+ static const String screenRoute ="welcomeUIs";
   const Welcomescreen({super.key});
 
   @override
@@ -31,8 +34,8 @@ class _WelcomescreenState extends State<Welcomescreen> {
               )
           ],),
           SizedBox(height: 30,),
-          myButton(color: Colors.white,title: "Sign in",onPressed: (){},),
-          myButton(color: Colors.blue, title: "register", onPressed: (){})
+          myButton(color: Colors.white,title: "Sign in",onPressed: (){Navigator.pushNamed(context, signingUIs.screenRoute);},),
+          myButton(color: Colors.blue, title: "register", onPressed: (){Navigator.pushNamed(context, registerationUIs.screenRoute);})
         ],),
       ),
     );

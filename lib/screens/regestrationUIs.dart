@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:myprojectapp/widgets/my_button.dart';
 
 class registerationUIs extends StatefulWidget {
+  static const String screenRoute ="regestrationUIs";
   const registerationUIs({super.key});
 
   @override

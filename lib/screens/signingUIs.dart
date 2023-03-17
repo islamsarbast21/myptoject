@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import '../widgets/my_button.dart';
 
 class signingUIs extends StatefulWidget {
+  static const String screenRoute ="signingUIs";
   const signingUIs({super.key});
 
   @override

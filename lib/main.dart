@@ -17,7 +17,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(appBarTheme: AppBarTheme(backgroundColor: Color.fromRGBO(7, 94, 84, 1))),
-      home:chatUIs()
+      initialRoute: Welcomescreen.screenRoute,
+      routes: {
+        Welcomescreen.screenRoute:(context)=>Welcomescreen(),
+        signingUIs.screenRoute:(context) => signingUIs(),
+        registerationUIs.screenRoute:(context)=> registerationUIs(),
+        body.screenRoute:(context) => body()
+      },  
 
       );
   }

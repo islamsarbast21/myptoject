@@ -7,7 +7,7 @@ class myButton extends StatelessWidget {
 
   final Color color;
   final String title;
-  final Function onPressed;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class myButton extends StatelessWidget {
         elevation: 5,
         color:color,
         borderRadius: BorderRadius.circular(15),
-        child: MaterialButton(onPressed: () => onPressed,
+        child: MaterialButton(onPressed: onPressed,
         height: 42,
         minWidth: 200,
         child: Text(title,style: TextStyle(color: Color.fromRGBO(7, 94, 84, 1),fontSize: 18,fontWeight: FontWeight.w700),),),
