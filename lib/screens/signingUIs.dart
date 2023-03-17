@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:myprojectapp/home.dart';
 
 import '../widgets/my_button.dart';
 
@@ -78,7 +79,7 @@ class _signingUIsState extends State<signingUIs> {
               ),
           ),
           SizedBox(height: 10,),
-          myButton(color: Color.fromARGB(255, 243, 236, 30), title: "Sign in", onPressed: (){})
+          myButton(color: Color.fromARGB(255, 243, 236, 30), title: "Sign in", onPressed: (){Navigator.pushNamed(context, body.screenRoute);})
         ],),
       ),
     );

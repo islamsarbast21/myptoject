@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:myprojectapp/home.dart';
 import 'package:myprojectapp/widgets/my_button.dart';
 
 class registerationUIs extends StatefulWidget {
@@ -77,7 +78,7 @@ class _registerationUIsState extends State<registerationUIs> {
               ),
           ),
           SizedBox(height: 10,),
-          myButton(color: Color.fromARGB(255, 240, 240, 240), title: "register", onPressed: (){})
+          myButton(color: Color.fromARGB(255, 240, 240, 240), title: "register", onPressed: (){Navigator.pushNamed(context, body.screenRoute);})
         ],),
       ),
     );
