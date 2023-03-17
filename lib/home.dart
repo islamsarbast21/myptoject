@@ -11,10 +11,13 @@ class body extends StatelessWidget {
     return DefaultTabController(length: 4,initialIndex: 1, 
     child: Scaffold(
       appBar: AppBar
-      (title: Text("whatsApp"),bottom: TabBar(tabs: [Tab(child: Icon(Icons.camera_alt_outlined),),
-      Tab(child:Text("chat") ),
-      Tab(child:Text("status") ),
-      Tab(child:Text("calls") )]
+      (title: Text("whatsApp"),bottom: TabBar(
+        tabs: [
+          Tab(child: Icon(Icons.camera_alt_outlined),),
+          Tab(child:Text("chat") ),
+          Tab(child:Text("status") ),
+          Tab(child:Text("calls") )
+          ]
       ),
         actions: [
           PopupMenuButton(itemBuilder: (context)=>[PopupMenuItem(child: Text("setting"),value: "setting",),
@@ -25,6 +28,7 @@ class body extends StatelessWidget {
           IconButton(onPressed: (){}, icon: Icon(Icons.search))
           ],
           ),
+    
     ),
     );
     

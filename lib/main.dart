@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myprojectapp/home.dart';
+import 'package:myprojectapp/screens/chatsUIs.dart';
 import 'package:myprojectapp/screens/regestrationUIs.dart';
+import 'package:myprojectapp/screens/signingUIs.dart';
 import 'package:myprojectapp/screens/welcomeUIs.dart';
 void main() {
   runApp(const  MyApp());
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(appBarTheme: AppBarTheme(backgroundColor: Color.fromRGBO(7, 94, 84, 1))),
-      home:registerationUIs()
+      home:chatUIs()
 
       );
   }
