@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import '../widgets/showOTPdialog.dart';
+import '../widgets/showSnackBar.dart';
 
+class FirebaseAuthMethods{
+   final FirebaseAuth _auth;
+   FirebaseAuthMethods(this._auth);
 
-
-
-/*
 
 Future<void> phoneSignIn(
   BuildContext context,
@@ -36,6 +38,6 @@ Future<void> phoneSignIn(
       },
     );
 }
+}
 
 
- */

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:myprojectapp/screens/phoneUIs.dart';
 import 'package:myprojectapp/screens/regestrationUIs.dart';
 import 'package:myprojectapp/screens/signingUIs.dart';
 
@@ -35,7 +36,8 @@ class _WelcomescreenState extends State<Welcomescreen> {
           ],),
           SizedBox(height: 30,),
           myButton(color: Colors.white,title: "Sign in",onPressed: (){Navigator.pushNamed(context, signingUIs.screenRoute);},),
-          myButton(color: Colors.blue, title: "register", onPressed: (){Navigator.pushNamed(context, registerationUIs.screenRoute);})
+          myButton(color: Colors.blue, title: "register", onPressed: (){Navigator.pushNamed(context, registerationUIs.screenRoute);}),
+          myButton(color: Color.fromARGB(255, 179, 121, 197), title: "Sign in with phone no.", onPressed: (){Navigator.pushNamed(context, phoneUIs.screenRoute);})
         ],),
       ),
     );
