@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:myprojectapp/home.dart';
+import 'package:myprojectapp/screens/signingUIs.dart';
+import 'package:myprojectapp/screens/welcomeUIs.dart';
 import 'package:myprojectapp/widgets/my_button.dart';
 
 class registerationUIs extends StatefulWidget {
@@ -13,6 +15,9 @@ class registerationUIs extends StatefulWidget {
 }
 
 class _registerationUIsState extends State<registerationUIs> {
+
+  late String email;
+  late String password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +30,7 @@ class _registerationUIsState extends State<registerationUIs> {
           children: [
             
           Container(
-            height: 250,
+            height: 150,
             child: Image.asset('images/img_three.png'),
 
           ),
@@ -34,9 +39,12 @@ class _registerationUIsState extends State<registerationUIs> {
               ),
           SizedBox(height: 50),
           TextField(
+            keyboardType: TextInputType.emailAddress,
             style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,),
             textAlign: TextAlign.center,
-            onChanged: (value){},
+            onChanged: (value){
+              email=value;
+            },
             decoration: InputDecoration(
               
               hintText: "enter your E-mail",
@@ -57,9 +65,12 @@ class _registerationUIsState extends State<registerationUIs> {
           ),
           SizedBox(height: 14,),
           TextField(
+            obscureText: true,
             style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,),
             textAlign: TextAlign.center,
-            onChanged: (value){},
+            onChanged: (value){
+              password=value;
+            },
             decoration: InputDecoration(
               hintText: "enter your Password",
               contentPadding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
@@ -78,7 +89,13 @@ class _registerationUIsState extends State<registerationUIs> {
               ),
           ),
           SizedBox(height: 10,),
-          myButton(color: Color.fromARGB(255, 240, 240, 240), title: "register", onPressed: (){Navigator.pushNamed(context, body.screenRoute);})
+          myButton(
+            color: Color.fromARGB(255, 240, 240, 240),
+            title: "register", onPressed: (){
+              print(email);
+              print(password);
+              Navigator.pushNamed(context,signingUIs.screenRoute);
+          })
         ],),
       ),
     );

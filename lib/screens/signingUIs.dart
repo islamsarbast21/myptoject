@@ -26,7 +26,7 @@ class _signingUIsState extends State<signingUIs> {
           children: [
             
           Container(
-            height: 250,
+            height: 150,
             child: Image.asset('images/img_one.png'),
 
           ),
@@ -35,6 +35,7 @@ class _signingUIsState extends State<signingUIs> {
               ),
           SizedBox(height: 50),
           TextField(
+            keyboardType: TextInputType.emailAddress,
             style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,),
             textAlign: TextAlign.center,
             onChanged: (value){},
@@ -56,8 +57,9 @@ class _signingUIsState extends State<signingUIs> {
               
               ),
           ),
-          SizedBox(height: 14,),
+          SizedBox(height: 10,),
           TextField(
+            obscureText: true,
             style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,),
             textAlign: TextAlign.center,
             onChanged: (value){},
