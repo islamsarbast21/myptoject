@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:myprojectapp/main.dart';
+import 'package:myprojectapp/screens/chatislam.dart';
+import 'package:myprojectapp/widgets/popupwidget.dart';
 
 class body extends StatefulWidget {
   static const String screenRoute ="home";
@@ -26,15 +28,14 @@ class _bodyState extends State<body> {
           ]
       ),
         actions: [
-          PopupMenuButton(itemBuilder: (context)=>[PopupMenuItem(child: Text("setting"),value: "setting",),
-          PopupMenuItem(child: Text("started"),value: "stsrted",),
-          PopupMenuItem(child: Text("whatsapp"),value: "whatsapp",),
-          PopupMenuItem(child: Text("new groupe"),value: "new groupe",)]
-          ),
+          popupwidget(),
           IconButton(onPressed: (){}, icon: Icon(Icons.search))
           ],
           ),
-    
+    body: TabBarView(children: [Text("1"),
+    chatislam(),
+    Text("3"),
+    Text("4"),]),
     ),
     );
     
