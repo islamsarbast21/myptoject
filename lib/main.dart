@@ -4,7 +4,14 @@ import 'package:myprojectapp/screens/chatsUIs.dart';
 import 'package:myprojectapp/screens/regestrationUIs.dart';
 import 'package:myprojectapp/screens/signingUIs.dart';
 import 'package:myprojectapp/screens/welcomeUIs.dart';
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+void main() async {
+  
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const  MyApp());
 }
 

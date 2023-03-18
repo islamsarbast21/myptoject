@@ -5,6 +5,9 @@ import 'package:myprojectapp/home.dart';
 import 'package:myprojectapp/screens/signingUIs.dart';
 import 'package:myprojectapp/screens/welcomeUIs.dart';
 import 'package:myprojectapp/widgets/my_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:myprojectapp/widgets/showOTPdialog.dart';
+import 'package:myprojectapp/widgets/showSnackBar.dart';
 
 class registerationUIs extends StatefulWidget {
   static const String screenRoute ="regestrationUIs";
@@ -15,10 +18,12 @@ class registerationUIs extends StatefulWidget {
 }
 
 class _registerationUIsState extends State<registerationUIs> {
+  final _auth =FirebaseAuth.instance;
 
   late String email;
   late String password;
   @override
+  
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor:Color.fromARGB(255, 10, 147, 106),
@@ -63,6 +68,7 @@ class _registerationUIsState extends State<registerationUIs> {
               
               ),
           ),
+          
           SizedBox(height: 14,),
           TextField(
             obscureText: true,
@@ -88,16 +94,30 @@ class _registerationUIsState extends State<registerationUIs> {
               
               ),
           ),
+          
           SizedBox(height: 10,),
           myButton(
             color: Color.fromARGB(255, 240, 240, 240),
-            title: "register", onPressed: (){
-              print(email);
-              print(password);
-              Navigator.pushNamed(context,signingUIs.screenRoute);
+            title: "register", onPressed: () async{
+
+                try {
+                  final newUser =await _auth.createUserWithEmailAndPassword(
+                  email: email,
+                  password: password
+                );
+                Navigator.pushNamed(context,signingUIs.screenRoute);
+                } catch (e) {
+                  print(e);
+                }
+
+              
           })
         ],),
       ),
     );
   }
+
+
+
 }
+

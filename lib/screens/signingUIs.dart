@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:myprojectapp/home.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../widgets/my_button.dart';
 
@@ -14,6 +15,9 @@ class signingUIs extends StatefulWidget {
 }
 
 class _signingUIsState extends State<signingUIs> {
+  final _auth=FirebaseAuth.instance;
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
