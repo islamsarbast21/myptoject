@@ -19,7 +19,7 @@ class _chatUIsState extends State<chatUIs> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 53, 74, 82),
+        backgroundColor: Color.fromARGB(255, 34, 118, 111),
         title: Row(children: [
           CircleAvatar(backgroundImage: AssetImage('images/img_pr1.jpg')),
           SizedBox(width: 10,),
@@ -38,10 +38,10 @@ class _chatUIsState extends State<chatUIs> {
            Container(),
            Container(
             decoration: BoxDecoration(
-              border: Border(top: BorderSide(color: Color.fromARGB(255, 53, 74, 82),width: 8))
+              border: Border(top: BorderSide(color:Color.fromARGB(255, 34, 118, 111),width: 5))
             ),
             child: Container(
-              decoration: BoxDecoration(color: Color.fromARGB(255, 53, 74, 82)),
+              decoration: BoxDecoration(color: Color.fromARGB(255, 34, 118, 111)),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -62,7 +62,7 @@ class _chatUIsState extends State<chatUIs> {
                   ),
                   TextButton(onPressed: (){}, 
                     child: Text('send',
-                    style: TextStyle(color: Color.fromARGB(255, 250, 252, 254),fontWeight: FontWeight.w700,fontSize: 18),
+                    style: TextStyle(color: Color.fromARGB(255, 250, 252, 254),fontWeight: FontWeight.w600,fontSize: 18),
                  )  
                        
                        )
@@ -75,7 +75,8 @@ class _chatUIsState extends State<chatUIs> {
         )
         
          ),
-         backgroundColor:Color.fromARGB(255, 38, 66, 110),
+         backgroundColor:  Color.fromARGB(255, 53, 74, 82),
+         
     );
   }
 }
