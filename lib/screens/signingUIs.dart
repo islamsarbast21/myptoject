@@ -16,6 +16,8 @@ class signingUIs extends StatefulWidget {
 
 class _signingUIsState extends State<signingUIs> {
   final _auth=FirebaseAuth.instance;
+  late String email;
+  late String password;
 
   
   @override
@@ -85,7 +87,29 @@ class _signingUIsState extends State<signingUIs> {
               ),
           ),
           SizedBox(height: 10,),
-          myButton(color: Color.fromARGB(255, 247, 247, 247), title: "Sign in", onPressed: (){Navigator.pushNamed(context, body.screenRoute);})
+          myButton(color: Color.fromARGB(255, 247, 247, 247), title: "Sign in", onPressed: ()async{
+            
+            showDialog(context: context, builder: (context) {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            },);
+            try {
+               final user=_auth.signInWithEmailAndPassword(email: email, password: password);
+            if(user!=null){
+              Navigator.pushNamed(context, body.screenRoute);
+
+            }
+            } on FirebaseAuthException catch (e){
+              if (e.code == 'user-not-found'){
+                print("not user found for that email");
+              }else if(e.code == 'wrong-password'){
+                print("wrong password , try agian");
+              }
+            }
+            
+            
+            })
         ],),
       ),
     );
