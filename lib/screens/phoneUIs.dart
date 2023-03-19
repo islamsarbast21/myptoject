@@ -75,7 +75,7 @@ class _phoneUIsState extends State<phoneUIs> {
           CustomTextField(controller: phoneController,hintText: 'Enter phone number'),
           SizedBox(height: 10,),
 
-          myButton(color: Color.fromARGB(250, 230, 223, 223), title: "send OTP", onPressed:phoneSignIn )
+          myButton(color: Color.fromARGB(255, 179, 121, 197), title: "send OTP", onPressed:phoneSignIn )
           
           
         ],),

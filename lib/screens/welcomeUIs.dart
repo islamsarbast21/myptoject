@@ -28,6 +28,7 @@ class _WelcomescreenState extends State<Welcomescreen> {
           children: [
           Column(children: [
             Container(
+              height: 300,
               child: Image.asset('images/img_four.png'),
             ),
             Text("Whatsapp",
