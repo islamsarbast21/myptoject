@@ -36,8 +36,8 @@ class _WelcomescreenState extends State<Welcomescreen> {
           ],),
           SizedBox(height: 30,),
           myButton(color: Colors.white,title: "Sign in",onPressed: (){Navigator.pushNamed(context, signingUIs.screenRoute);},),
-          myButton(color: Colors.blue, title: "register", onPressed: (){Navigator.pushNamed(context, registerationUIs.screenRoute);}),
-          myButton(color: Color.fromARGB(255, 179, 121, 197), title: "Sign in with phone no.", onPressed: (){Navigator.pushNamed(context, phoneUIs.screenRoute);})
+          myButton(color: Colors.blue, title: "Register", onPressed: (){Navigator.pushNamed(context, registerationUIs.screenRoute);}),
+          myButton(color: Color.fromARGB(255, 179, 121, 197), title: "Register with cell phone", onPressed: (){Navigator.pushNamed(context, phoneUIs.screenRoute);})
         ],),
       ),
     );

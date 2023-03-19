@@ -35,7 +35,7 @@ class _registerationUIsState extends State<registerationUIs> {
           children: [
             
           Container(
-            height: 100,
+            height: 150,
             child: Image.asset('images/img_three.png'),
 
           ),
@@ -94,29 +94,7 @@ class _registerationUIsState extends State<registerationUIs> {
               
               ),
           ),
-          SizedBox(height: 10,),
-          TextField(
-            style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,),
-            
-            decoration: InputDecoration(
-              
-              hintText: "enter phone Number",
-              contentPadding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                ),
-                enabledBorder:OutlineInputBorder(
-                  borderSide: BorderSide(color: Color.fromARGB(255, 255, 255, 255),width: 1),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                focusedBorder:OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blue,width: 3),
-                  borderRadius: BorderRadius.circular(10),
-                ) ,
-              
-              ), 
-          ),
-          
+          SizedBox(height: 10,),          
           SizedBox(height: 10,),
           
           myButton(
