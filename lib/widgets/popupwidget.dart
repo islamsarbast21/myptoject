@@ -49,10 +49,10 @@ class _popupwidgetState extends State<popupwidget> {
               
               
             ],
-          ),onPressed: (){
-            print("jjkjkjjjjjjjjjjjjjjjj");
+          ),
+          onPressed: (){            
             _auth.signOut();
-            return Navigator.pop(context);
+             Navigator.pop(context);
           },)
           )
           ]
