@@ -111,6 +111,7 @@ class _registerationUIsState extends State<registerationUIs> {
                   });
                   
                   try {
+                    
                     final newUser =await _auth.createUserWithEmailAndPassword(
                     email: email,
                     password: password

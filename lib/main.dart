@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myprojectapp/home.dart';
+import 'package:myprojectapp/screens/chatislam.dart';
 import 'package:myprojectapp/screens/chatsUIs.dart';
 import 'package:myprojectapp/screens/phoneUIs.dart';
 import 'package:myprojectapp/screens/regestrationUIs.dart';
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
         signingUIs.screenRoute:(context) => signingUIs(),
         registerationUIs.screenRoute:(context)=> registerationUIs(),
         body.screenRoute:(context) => body(),
-        phoneUIs.screenRoute:(context) => phoneUIs()
+        phoneUIs.screenRoute:(context) => phoneUIs(),
+        chatUIs.screenRoute:(context) => chatUIs()
       },  
 
       );
