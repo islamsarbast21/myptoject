@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class chatUIs extends StatefulWidget {
@@ -18,92 +16,66 @@ class _chatUIsState extends State<chatUIs> {
   late User signedInUser;
 
   @override
-  void initState() {
-    super.initState();
-    getCurrentUser();
-  }
-
-  void getCurrentUser() {
-    try {
-      final user = _auth.currentUser;
-      if (user != null) {
-        signedInUser = user;
-        print(signedInUser.email);
-      }
-    } catch (e) {
-      print(e);
-    }
-  }
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.yellow[900],
-        title: Row(
-          children: [
-            Image.asset('images/logo.png', height: 25),
-            SizedBox(width: 10),
-            Text('MessageMe')
-          ],
-        ),
+        backgroundColor: Color.fromARGB(255, 53, 74, 82),
+        title: Row(children: [
+          CircleAvatar(backgroundImage: AssetImage('images/img_pr1.jpg')),
+          SizedBox(width: 10,),
+          Text('maroon')
+        ],),
         actions: [
-          IconButton(
-            onPressed: () {
-              //_auth.signOut();
-             // Navigator.pop(context);
-            },
-            icon: Icon(Icons.close),
-          )
+          IconButton(onPressed: (){}, icon: Icon(Icons.close))
         ],
       ),
       body: SafeArea(
-        child: Column(
+        
+        child:Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(),
-            Container(
-              decoration: BoxDecoration(
-                border: Border(
-                  top: BorderSide(
-                    color: Colors.orange,
-                    width: 2,
-                  ),
-                ),
-              ),
+           Container(),
+           Container(
+            decoration: BoxDecoration(
+              border: Border(top: BorderSide(color: Color.fromARGB(255, 53, 74, 82),width: 8))
+            ),
+            child: Container(
+              decoration: BoxDecoration(color: Color.fromARGB(255, 53, 74, 82)),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Expanded(
-                    child: TextField(
-                      onChanged: (value) {},
+                  
+                  Container(
+                    decoration: BoxDecoration(borderRadius: BorderRadius.horizontal(right: Radius.circular(20)),color: Color.fromARGB(255, 18, 82, 110)),
+                    width: 310,
+                    child: Expanded( child: TextField(
+                      
+                      cursorRadius: Radius.circular(20),
+                      onChanged: (value){},
                       decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(
-                          vertical: 10,
-                          horizontal: 20,
+                        
+                        contentPadding: EdgeInsets.symmetric(vertical:8,horizontal: 20),
+                        hintText: 'Write your message here...',border: InputBorder.none
                         ),
-                        hintText: 'Write your message here...',
-                        border: InputBorder.none,
-                      ),
-                    ),
+                    )),
                   ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'send',
-                      style: TextStyle(
-                        color: Colors.blue[800],
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
-                    ),
-                  )
+                  TextButton(onPressed: (){}, 
+                    child: Text('send',
+                    style: TextStyle(color: Color.fromARGB(255, 250, 252, 254),fontWeight: FontWeight.w700,fontSize: 18),
+                 )  
+                       
+                       )
                 ],
               ),
             ),
+           ),
+           
           ],
-        ),
-      ),
+        )
+        
+         ),
+         backgroundColor:Color.fromARGB(255, 38, 66, 110),
     );
   }
 }
