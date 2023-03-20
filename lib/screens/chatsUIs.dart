@@ -3,9 +3,12 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:myprojectapp/screens/signingUIs.dart';
 
 
 final _firestore =FirebaseFirestore.instance;
+late User signedInUser;//this will give us email
+
 class chatUIs extends StatefulWidget {
    static const String screenRoute ="chatsUIs";
   const chatUIs({super.key});
@@ -15,9 +18,9 @@ class chatUIs extends StatefulWidget {
 }
 
 class _chatUIsState extends State<chatUIs> {
-  
+  final messageTextController=TextEditingController();
   final _auth = FirebaseAuth.instance;
-  late User signedInUser;//this will give us email
+  
   String? messageText;//this will give us the message
   
 
@@ -47,14 +50,14 @@ class _chatUIsState extends State<chatUIs> {
   //   }
   // }
 
-  void messageStreams()async{
-   await for(var snapshot in _firestore.collection('messages').snapshots()){
-    for(var message in snapshot.docs){
-      print(message.data());
-    }
-   }
+  // void messageStreams()async{
+  //  await for(var snapshot in _firestore.collection('messages').snapshots()){
+  //   for(var message in snapshot.docs){
+  //     print(message.data());
+  //   }
+  //  }
 
-  }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -69,9 +72,9 @@ class _chatUIsState extends State<chatUIs> {
         actions: [
           IconButton(onPressed: (){
 
-            messageStreams();
-            //_auth.signOut();
-            //  Navigator.pop(context);
+            // messageStreams();
+            _auth.signOut();
+              Navigator.pushNamed(context, signingUIs.screenRoute);
           }, icon: Icon(Icons.download))
         ],
       ),
@@ -82,6 +85,7 @@ class _chatUIsState extends State<chatUIs> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
            MessageStreameBuilder(),
+           
            Container(
             decoration: BoxDecoration(
               border: Border(top: BorderSide(color:Color.fromARGB(255, 34, 118, 111),width: 5))
@@ -97,7 +101,7 @@ class _chatUIsState extends State<chatUIs> {
                     width: 310,
                     child: Expanded( 
                       child: TextField(
-                      
+                      controller: messageTextController,
                       cursorRadius: Radius.circular(20),
                       onChanged: (value){
                         messageText=value;
@@ -112,9 +116,11 @@ class _chatUIsState extends State<chatUIs> {
                   TextButton(onPressed: (){
                     _firestore.collection('messages').add({
                           'text':messageText,
-                          'sender':signedInUser.email
+                          'sender':signedInUser.email,
+                          //'time':FieldValue.serverTimestamp()
                         }//assocciated array ,this will create data in database
                         );//the name of database inside firebase
+                        messageTextController.clear();
                   }, 
                     child: Text('send',
                     style: TextStyle(color: Color.fromARGB(255, 250, 252, 254),fontWeight: FontWeight.w600,fontSize: 18),
@@ -142,7 +148,7 @@ class MessageStreameBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  StreamBuilder<QuerySnapshot>(
-            stream: _firestore.collection('messages').snapshots(),
+            stream: _firestore.collection('messages').snapshots(),//orderBy('field').
             builder: (context,snapshot){
               List<MessageLine> messageWidgets =[];
 
@@ -154,15 +160,24 @@ class MessageStreameBuilder extends StatelessWidget {
                   ),
                 );
               }else{
-              final messages=snapshot.data?.docs; 
+              final messages=snapshot.data?.docs;//.reversed 
               for (var message in messages!) {
                 final messageText = message.get('text');
                 final messageSender=message.get('sender');
-                final messageWidget = MessageLine(sender: messageSender,text: messageText,);
+                final cuurentUser=signedInUser.email;
+
+               
+
+                final messageWidget = MessageLine(
+                  sender: messageSender,
+                  text: messageText,
+                  isMe: cuurentUser==messageSender 
+                  );
                 messageWidgets.add(messageWidget);
               }
               return Expanded(
                 child: ListView(
+                  reverse: true,
                   padding: EdgeInsets.symmetric(horizontal: 10,vertical: 20),
                   children: messageWidgets,
                 ),
@@ -177,25 +192,31 @@ class MessageStreameBuilder extends StatelessWidget {
 
 
 class MessageLine extends StatelessWidget {
-  const MessageLine({this.sender,this.text,super.key});
+  const MessageLine({this.sender,this.text,required this.isMe,super.key});
   final String? sender;
   final String? text;
+  final bool isMe;
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment:CrossAxisAlignment.end ,
+      crossAxisAlignment: isMe ?CrossAxisAlignment.end: CrossAxisAlignment.start ,
       children: [
         Text('$sender',style: TextStyle(fontSize: 12,color: Color.fromARGB(255, 219, 207, 172)),),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 20),
+          padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 10),
           child: Material( 
-            color: Color.fromARGB(255, 24, 49, 86),child: Padding(
+            color:isMe? Color.fromARGB(255, 24, 49, 86):Colors.amber
+            ,child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text('$text - $sender',style: TextStyle(fontSize: 16,
+              child: Text('$text ',style: TextStyle(fontSize: 16,
                color: Colors.white),
                       ),
             ),
-          borderRadius: BorderRadius.circular(20),
+          borderRadius:isMe? 
+          BorderRadius.only(topLeft: Radius.circular(20),bottomRight: Radius.circular(20),bottomLeft: Radius.circular(30)
+          ):
+          BorderRadius.only(topRight: Radius.circular(20),bottomRight: Radius.circular(20),bottomLeft: Radius.circular(30)
+          ),
           elevation:5 ,
           ),
         
