@@ -55,14 +55,17 @@ class _bodyState extends State<body> {
       ),
         actions: [
           popupwidget(),
-          IconButton(onPressed: (){}, icon: Icon(Icons.search))
+          IconButton(onPressed: (){}, icon: Icon(Icons.search)),
+          IconButton(onPressed: (){_auth.signOut();
+             Navigator.pop(context);}, icon: Icon(Icons.output))
+          
           ],
           ),
-    body: TextButton(child: Text("h"),onPressed: (){Navigator.pushNamed(context, chatUIs.screenRoute);},),
-    // TabBarView(children: [Text("1"),
-    // chatislam(),
-    // Text("3"),
-    // Text("4"),]),
+    body: //TextButton(child: Text("h"),onPressed: (){Navigator.pushNamed(context, chatUIs.screenRoute);},),
+    TabBarView(children: [Text("1"),
+     chatislam(),
+     Text("3"),
+    Text("4"),]),
     ),
     );
     

@@ -65,15 +65,15 @@ class _chatUIsState extends State<chatUIs> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 34, 118, 111),
         title: Row(children: [
-          CircleAvatar(backgroundImage: AssetImage('images/img_pr1.jpg')),
+          CircleAvatar(backgroundImage: AssetImage('images/n1.jpg')),
           SizedBox(width: 10,),
-          Text('maroon')
+          Text('nihad')
         ],),
         actions: [
           IconButton(onPressed: (){
 
             // messageStreams();
-            _auth.signOut();
+            
               Navigator.pushNamed(context, signingUIs.screenRoute);
           }, icon: Icon(Icons.download))
         ],
