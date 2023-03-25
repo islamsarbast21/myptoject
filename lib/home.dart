@@ -45,12 +45,12 @@ class _bodyState extends State<body> {
     return DefaultTabController(length: 4,initialIndex: 1, 
     child: Scaffold(
       appBar: AppBar
-      (title: Text("whatsApp"),bottom: TabBar(
+      (title: Text("whatsApp",style: TextStyle(fontSize: 30),),bottom: TabBar(
         tabs: [
           Tab(child: Icon(Icons.camera_alt_outlined),),
-          Tab(child:Text("chat") ),
-          Tab(child:Text("status") ),
-          Tab(child:Text("calls") )
+          Tab(child:Text("chat",style: TextStyle(fontSize: 17)) ),
+          Tab(child:Text("status",style: TextStyle(fontSize: 17)) ),
+          Tab(child:Text("calls",style: TextStyle(fontSize: 17)) )
           ]
       ),
         actions: [

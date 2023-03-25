@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(appBarTheme: AppBarTheme(backgroundColor: Color.fromRGBO(7, 94, 84, 1))),
+      theme: ThemeData(appBarTheme: AppBarTheme(backgroundColor: Color.fromRGBO(7, 94, 84, 1) )),
       //initialRoute: _auth.currentUser!=null ? body.screenRoute:Welcomescreen.screenRoute,
       initialRoute: Welcomescreen.screenRoute,
       routes: {

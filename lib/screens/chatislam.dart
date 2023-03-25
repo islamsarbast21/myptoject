@@ -16,9 +16,9 @@ class chatislam extends StatelessWidget {
       {return  TextButton(
         onPressed:(){Navigator.pushNamed(context, chatUIs.screenRoute);} ,
         child: ListTile(
-        title: Text(userlist[Index].name),
-        subtitle: Text(userlist[Index].masegges),
-        trailing: Text(userlist[Index].times),
+        title: Text(userlist[Index].name,style: TextStyle(fontSize: 20)),
+        subtitle: Text(userlist[Index].masegges,style: TextStyle(fontSize: 13)),
+        trailing: Text(userlist[Index].times,style: TextStyle(fontSize: 15)),
         leading: CircleAvatar(backgroundImage: AssetImage(userlist[Index].image), )
         
         ),
