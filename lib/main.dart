@@ -19,7 +19,11 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+<<<<<<< HEAD
  final _auth=FirebaseAuth.instance;
+=======
+  final _auth=FirebaseAuth.instance;
+>>>>>>> modybam
   
   // This widget is the root of your application.
   @override
