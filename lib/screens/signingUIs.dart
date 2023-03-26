@@ -100,7 +100,10 @@ class _signingUIsState extends State<signingUIs> {
                 ),
             ),
             SizedBox(height: 10,),
-            myButton(color: Color.fromARGB(255, 11, 153, 218), title: "Sign in", onPressed: ()async{
+            myButton(
+              color: Color.fromARGB(255, 11, 153, 218),
+              title: "Sign in", 
+              onPressed: ()async{
               
               showDialog(context: context, builder: (context) {
                 return Center(

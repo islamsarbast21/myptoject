@@ -160,7 +160,7 @@ class MessageStreameBuilder extends StatelessWidget {
                   ),
                 );
               }else{
-              final messages=snapshot.data?.docs;//.reversed 
+              final messages=snapshot.data?.docs.reversed;//.reversed 
               for (var message in messages!) {
                 final messageText = message.get('text');
                 final messageSender=message.get('sender');
