@@ -19,7 +19,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
- // final _auth=FirebaseAuth.instance;
+  final _auth=FirebaseAuth.instance;
   
   // This widget is the root of your application.
   @override
@@ -27,8 +27,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(appBarTheme: AppBarTheme(backgroundColor: Color.fromRGBO(7, 94, 84, 1) )),
-      //initialRoute: _auth.currentUser!=null ? body.screenRoute:Welcomescreen.screenRoute,
-      initialRoute: Welcomescreen.screenRoute,
+      initialRoute: _auth.currentUser!=null ? body.screenRoute:Welcomescreen.screenRoute,
+      //initialRoute: Welcomescreen.screenRoute,
       routes: {
         Welcomescreen.screenRoute:(context)=>Welcomescreen(),
         signingUIs.screenRoute:(context) => signingUIs(),
