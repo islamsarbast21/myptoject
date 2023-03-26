@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:myprojectapp/main.dart';
+import 'package:myprojectapp/screens/callUIs.dart';
 import 'package:myprojectapp/screens/chatislam.dart';
 import 'package:myprojectapp/screens/chatsUIs.dart';
 import 'package:myprojectapp/widgets/popupwidget.dart';
@@ -65,7 +66,7 @@ class _bodyState extends State<body> {
     TabBarView(children: [Text("1"),
      chatislam(),
      Text("3"),
-    Text("4"),]),
+    call()]),
     ),
     );
     
