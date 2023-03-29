@@ -9,6 +9,7 @@ import 'package:myprojectapp/screens/welcomeUIs.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'firebase_options.dart';
+
 void main() async {
   
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,11 +20,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-<<<<<<< HEAD
  final _auth=FirebaseAuth.instance;
-=======
-  final _auth=FirebaseAuth.instance;
->>>>>>> modybam
   
   // This widget is the root of your application.
   @override

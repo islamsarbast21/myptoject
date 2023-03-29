@@ -98,7 +98,7 @@ class _chatUIsState extends State<chatUIs> {
                   
                   Container(
                     decoration: BoxDecoration(borderRadius: BorderRadius.horizontal(right: Radius.circular(20)),color: Color.fromARGB(255, 18, 82, 110)),
-                    width: 310,
+                    width: 290,
                     child: Expanded( 
                       child: TextField(
                       controller: messageTextController,
