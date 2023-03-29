@@ -8,7 +8,7 @@ class introPage3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color:Color.fromARGB(255, 58, 228, 70),
+      color:Color.fromARGB(255, 10, 147, 106),
       child: Center(
         child: Text("3"),
       ),

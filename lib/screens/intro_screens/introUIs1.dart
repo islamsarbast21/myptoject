@@ -8,7 +8,7 @@ class introPage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blue[200],
+      color: Color.fromARGB(255, 38, 149, 153),
       child: Center(
         child: Text("1"),
       ),
