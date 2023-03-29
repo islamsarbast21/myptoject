@@ -12,6 +12,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 
 class HomePage extends StatefulWidget {
+  static const String screenRoute ="startingUIs";
   const HomePage({super.key});
 
   @override

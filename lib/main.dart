@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(appBarTheme: AppBarTheme(backgroundColor: Color.fromRGBO(7, 94, 84, 1) )),
-      //initialRoute: _auth.currentUser!=null ? body.screenRoute:Welcomescreen.screenRoute,
+      initialRoute: _auth.currentUser!=null ? body.screenRoute:HomePage.screenRoute,
       //initialRoute: Welcomescreen.screenRoute,
       routes: {
         Welcomescreen.screenRoute:(context)=>Welcomescreen(),
@@ -37,9 +37,10 @@ class MyApp extends StatelessWidget {
         registerationUIs.screenRoute:(context)=> registerationUIs(),
         body.screenRoute:(context) => body(),
         phoneUIs.screenRoute:(context) => phoneUIs(),
-        chatUIs.screenRoute:(context) => chatUIs()
+        chatUIs.screenRoute:(context) => chatUIs(),
+        HomePage.screenRoute:(context) => HomePage()
       }, 
-      home: HomePage(), 
+       
 
       );
   }
