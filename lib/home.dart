@@ -63,10 +63,11 @@ class _bodyState extends State<body> {
           ],
           ),
     body: //TextButton(child: Text("h"),onPressed: (){Navigator.pushNamed(context, chatUIs.screenRoute);},),
-    TabBarView(children: [Text("1"),
-     chatislam(),
-     Text("3"),
-    call()]),
+    TabBarView(children: [
+      Text("1"),
+      chatislam(),
+      Text("3"),
+      call()]),
     ),
     );
     

@@ -5,6 +5,7 @@ import 'package:myprojectapp/screens/chatsUIs.dart';
 import 'package:myprojectapp/screens/phoneUIs.dart';
 import 'package:myprojectapp/screens/regestrationUIs.dart';
 import 'package:myprojectapp/screens/signingUIs.dart';
+import 'package:myprojectapp/screens/startingUIs.dart';
 import 'package:myprojectapp/screens/welcomeUIs.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(appBarTheme: AppBarTheme(backgroundColor: Color.fromRGBO(7, 94, 84, 1) )),
-      initialRoute: _auth.currentUser!=null ? body.screenRoute:Welcomescreen.screenRoute,
+      //initialRoute: _auth.currentUser!=null ? body.screenRoute:Welcomescreen.screenRoute,
       //initialRoute: Welcomescreen.screenRoute,
       routes: {
         Welcomescreen.screenRoute:(context)=>Welcomescreen(),
@@ -37,7 +38,8 @@ class MyApp extends StatelessWidget {
         body.screenRoute:(context) => body(),
         phoneUIs.screenRoute:(context) => phoneUIs(),
         chatUIs.screenRoute:(context) => chatUIs()
-      },  
+      }, 
+      home: HomePage(), 
 
       );
   }
