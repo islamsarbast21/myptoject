@@ -5,6 +5,7 @@ import 'package:myprojectapp/main.dart';
 import 'package:myprojectapp/screens/callUIs.dart';
 import 'package:myprojectapp/screens/chatislam.dart';
 import 'package:myprojectapp/screens/chatsUIs.dart';
+import 'package:myprojectapp/screens/groupUIs.dart';
 import 'package:myprojectapp/widgets/popupwidget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -52,26 +53,21 @@ class _bodyState extends State<body> {
           ),
           bottom: TabBar(tabs: [
             Tab(
-              child: Icon(Icons.camera_alt_outlined),
+              child: Icon(Icons.people_alt_rounded),
             ),
             Tab(child: Text("chat", style: TextStyle(fontSize: 17))),
             Tab(child: Text("status", style: TextStyle(fontSize: 17))),
             Tab(child: Text("calls", style: TextStyle(fontSize: 17)))
           ]),
           actions: [
-            popupwidget(),
+            IconButton(onPressed: () {}, icon: Icon(Icons.camera_alt_outlined)),
             IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-            IconButton(
-                onPressed: () {
-                  _auth.signOut();
-                  Navigator.pop(context);
-                },
-                icon: Icon(Icons.output))
+            popupwidget(),
           ],
           automaticallyImplyLeading: false,
         ),
-        body: //TextButton(child: Text("h"),onPressed: (){Navigator.pushNamed(context, chatUIs.screenRoute);},),
-            TabBarView(children: [Text("1"), chatislam(), Text("3"), call()]),
+        body:
+            TabBarView(children: [GroupUIs(), chatislam(), Text("3"), call()]),
       ),
     );
   }
