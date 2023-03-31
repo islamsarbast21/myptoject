@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myprojectapp/home.dart';
+import 'package:myprojectapp/screens/hidden_drawer.dart';
 import 'package:myprojectapp/services/firstdownload.dart' as globals;
 import 'package:myprojectapp/screens/chatislam.dart';
 import 'package:myprojectapp/screens/chatsUIs.dart';
@@ -48,7 +49,8 @@ class MyApp extends StatelessWidget {
         body.screenRoute: (context) => body(),
         phoneUIs.screenRoute: (context) => phoneUIs(),
         chatUIs.screenRoute: (context) => chatUIs(),
-        HomePage.screenRoute: (context) => HomePage()
+        HomePage.screenRoute: (context) => HomePage(),
+        HiddenDrawerUIs.screenRoute: (context) => HiddenDrawerUIs()
       },
     );
   }

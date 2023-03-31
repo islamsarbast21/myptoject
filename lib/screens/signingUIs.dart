@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:myprojectapp/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-
+import 'package:myprojectapp/screens/hidden_drawer.dart';
 import '../widgets/my_button.dart';
 
 class signingUIs extends StatefulWidget {

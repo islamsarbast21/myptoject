@@ -6,6 +6,7 @@ import 'package:myprojectapp/screens/callUIs.dart';
 import 'package:myprojectapp/screens/chatislam.dart';
 import 'package:myprojectapp/screens/chatsUIs.dart';
 import 'package:myprojectapp/screens/groupUIs.dart';
+import 'package:myprojectapp/widgets/my_header_drawer.dart';
 import 'package:myprojectapp/widgets/popupwidget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -62,13 +63,84 @@ class _bodyState extends State<body> {
           actions: [
             IconButton(onPressed: () {}, icon: Icon(Icons.camera_alt_outlined)),
             IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-            popupwidget(),
+            //popupwidget(),
           ],
-          automaticallyImplyLeading: false,
+        ),
+        drawer: Drawer(
+          backgroundColor: Color.fromARGB(255, 33, 132, 99),
+          child: SingleChildScrollView(
+            child: Container(
+              child: Column(children: [MyHeaderDrawer(), MyDrawerList()]),
+            ),
+          ),
         ),
         body:
             TabBarView(children: [GroupUIs(), chatislam(), Text("3"), call()]),
       ),
     );
   }
+
+  Widget MyDrawerList() {
+    return Container(
+      color: Color.fromARGB(255, 164, 46, 89),
+      padding: EdgeInsets.only(top: 15),
+      child: Column(
+        //show list of menu
+        children: [
+          MyMenuItem(
+            "profile",
+            Icons.assignment_ind_rounded,
+          ),
+          MyMenuItem(
+            "home",
+            Icons.home,
+          ),
+          MyMenuItem(
+            "home",
+            Icons.home,
+          ),
+          MyMenuItem(
+            "home",
+            Icons.home,
+          ),
+          MyMenuItem(
+            "home",
+            Icons.home,
+          ),
+          MyMenuItem(
+            "home",
+            Icons.home,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+Widget MyMenuItem(String title, IconData icon) {
+  return Material(
+    color: Color.fromARGB(255, 33, 132, 99),
+    child: InkWell(
+      onTap: () {},
+      child: Padding(
+        padding: EdgeInsets.all(15),
+        child: Row(
+          children: [
+            Expanded(
+                child: Icon(
+              icon,
+              size: 20,
+              color: Color.fromARGB(255, 255, 255, 255),
+            )),
+            Expanded(
+                flex: 1,
+                child: Text(
+                  title,
+                  style: TextStyle(color: Color.fromARGB(255, 252, 252, 252)),
+                ))
+          ],
+        ),
+      ),
+    ),
+  );
 }
