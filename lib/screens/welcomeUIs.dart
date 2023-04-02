@@ -61,7 +61,7 @@ class _WelcomescreenState extends State<Welcomescreen> {
                 color: Color.fromARGB(255, 179, 121, 197),
                 title: "Register with cell phone",
                 onPressed: () {
-                  Navigator.of(this.context).pushNamed(signingUIs.screenRoute);
+                  Navigator.of(this.context).pushNamed(phoneUIs.screenRoute);
                 }) //Navigator.pushNamed(context, phoneUIs.screenRoute);
           ],
         ),

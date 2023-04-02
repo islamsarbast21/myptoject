@@ -4,11 +4,10 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
 import 'package:myprojectapp/services/phoneSer.dart';
 import 'package:myprojectapp/widgets/my_button.dart';
-
 import '../widgets/my_textEdit.dart';
 
 class phoneUIs extends StatefulWidget {
-  static const String screenRoute ="phoneUIs";
+  static const String screenRoute = "phoneUIs";
   const phoneUIs({super.key});
 
   @override
@@ -22,33 +21,39 @@ class _phoneUIsState extends State<phoneUIs> {
     super.dispose();
     phoneController.dispose();
   }
-  void phoneSignIn(){
-    FirebaseAuthMethods(FirebaseAuth.instance).phoneSignIn(context, phoneController.text);
 
+  void phoneSignIn() {
+    FirebaseAuthMethods(FirebaseAuth.instance)
+        .phoneSignIn(context, phoneController.text);
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:Color.fromARGB(255, 10, 147, 106),
+      backgroundColor: Color.fromARGB(255, 10, 147, 106),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            
-          Container(
-            height: 200,
-            child: Image.asset('images/img_three.png'),
-
-          ),
-          Text("Registration with Phone No.",
-              style: TextStyle(fontSize: 48,fontWeight: FontWeight.w900,color: Color.fromRGBO(5, 85, 76, 1),),
+            Container(
+              height: 210,
+              child: Image.asset('images/img_three.png'),
+            ),
+            Text(
+              "Registration with Phone No.",
+              style: TextStyle(
+                fontSize: 48,
+                fontWeight: FontWeight.w900,
+                color: Color.fromRGBO(5, 85, 76, 1),
               ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
 
-          SizedBox(height: 20,),
-
-          /*
+            /*
           TextField(
             style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500,),
             
@@ -71,14 +76,18 @@ class _phoneUIsState extends State<phoneUIs> {
               ), 
           ),
           */
-         
-          CustomTextField(controller: phoneController,hintText: 'Enter phone number'),
-          SizedBox(height: 10,),
 
-          myButton(color: Color.fromARGB(255, 179, 121, 197), title: "send OTP", onPressed:phoneSignIn )
-          
-          
-        ],),
+            CustomTextField(
+                controller: phoneController, hintText: 'Enter phone number'),
+            SizedBox(
+              height: 10,
+            ),
+            myButton(
+                color: Color.fromARGB(255, 179, 121, 197),
+                title: "send OTP",
+                onPressed: phoneSignIn)
+          ],
+        ),
       ),
     );
   }

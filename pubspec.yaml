@@ -43,6 +43,7 @@ dependencies:
   lottie: ^2.3.1
   flutter_slidable: ^2.0.0
   hidden_drawer_menu: ^3.0.1
+  email_validator: "^2.1.16"
 
 dev_dependencies:
   flutter_test:

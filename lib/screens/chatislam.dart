@@ -63,12 +63,12 @@ class chatislam extends StatelessWidget {
               ),
             );
           }),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        elevation: 10,
-        child: Icon(Icons.message_outlined),
-        backgroundColor: Color.fromARGB(255, 60, 113, 108),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {},
+      //   elevation: 10,
+      //   child: Icon(Icons.message_outlined),
+      //   backgroundColor: Color.fromARGB(255, 60, 113, 108),
+      // ),
     );
   }
 }

@@ -6,6 +6,8 @@ import 'package:myprojectapp/screens/callUIs.dart';
 import 'package:myprojectapp/screens/chatislam.dart';
 import 'package:myprojectapp/screens/chatsUIs.dart';
 import 'package:myprojectapp/screens/groupUIs.dart';
+import 'package:myprojectapp/screens/signingUIs.dart';
+import 'package:myprojectapp/screens/welcomeUIs.dart';
 import 'package:myprojectapp/widgets/my_header_drawer.dart';
 import 'package:myprojectapp/widgets/popupwidget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -85,6 +87,7 @@ class _bodyState extends State<body> {
       color: Color.fromARGB(255, 164, 46, 89),
       padding: EdgeInsets.only(top: 15),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         //show list of menu
         children: [
           MyMenuItem(
@@ -111,6 +114,12 @@ class _bodyState extends State<body> {
             "home",
             Icons.home,
           ),
+          IconButton(
+              onPressed: () {
+                _auth.signOut();
+                Navigator.of(context).pushNamed(Welcomescreen.screenRoute);
+              },
+              icon: Icon(Icons.exit_to_app_rounded))
         ],
       ),
     );
